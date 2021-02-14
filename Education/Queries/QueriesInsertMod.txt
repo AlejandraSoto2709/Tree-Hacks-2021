@@ -1,0 +1,132 @@
+
+create table RaceEthnic
+(idRE int  not null primary key, 
+ nombre varchar(50) 
+);
+ 
+
+create table FamilyTypes
+(idFa int  not null primary key, 
+ nombre varchar(50)
+);
+
+create table IdentityTypes
+(idI int  not null primary key, 
+ nombre varchar(50)
+);
+
+create table DisabilityTypes
+(idDi int  not null primary key, 
+ nombre varchar(50)
+);
+
+
+create table Avatar
+(idAv int  not null primary key, 
+ name varchar(50),
+user varchar(50),
+passw varchar(50),
+age int,
+raEth varchar(50),
+faTy varchar(50),
+idTy varchar(50)
+);
+
+create table AvDis
+(idAvDi int primary key,
+idDi int references DisabilityTypes,
+idAv int references Avatar
+);
+
+create table Character
+(idC int  not null primary key, 
+name varchar(50),
+show varchar(80),
+prof varchar(50),
+raEth varchar(50),
+faTy varchar(50),
+descrip varchar(50),
+frase varchar(100)
+);
+
+create table CharDis
+(idCharDi int primary key,
+idDi int references DisabilityTypes,
+idC int references Character
+);
+
+
+------------------------insert----------------------------------------------------------
+
+insert into RaceEthnic values( 1, 'American Indian or Alaska Native');
+insert into RaceEthnic values( 2, 'Asian');
+insert into RaceEthnic values( 3, 'Black or African American');
+insert into RaceEthnic values( 4, 'Hispanic or Latino');
+insert into RaceEthnic values( 5, 'Native Hawaiian or Other Pacific Islander');
+insert into RaceEthnic values( 6, 'White');
+
+insert into FamilyTypes values( 1, 'Heteroparental Family');
+insert into FamilyTypes values( 2, 'Homoparental Family');
+insert into FamilyTypes values( 3, 'Single Parent Family');
+insert into FamilyTypes values( 4, 'Extended Family');
+insert into FamilyTypes values( 5, 'Step Family');
+insert into FamilyTypes values( 6, 'Grandparent Family');
+
+insert into IdentityTypes values( 1, '');
+
+insert into DisabilityTypes values( 1, 'None');
+insert into DisabilityTypes values( 2, 'ADHD');
+insert into DisabilityTypes values( 3, 'Dyslexia');
+insert into DisabilityTypes values( 4, 'Blind');
+insert into DisabilityTypes values( 5, 'Asthma');
+insert into DisabilityTypes values( 6, 'Paraplegic');
+insert into DisabilityTypes values( 7, 'Autism');
+insert into DisabilityTypes values( 8, 'Deaf');
+
+insert into Character values( 1, 'Miguel Rivera', 'Coco','Musician','Hispanic or Latino','Heteroparental Family','He is a musician, brave and optimistic.', 'Life is a song, love is the music');
+insert into CharDi values (1,1)
+insert into Character values( 2, 'Elena', 'Elena of avalor','Princess','Hispanic or Latino','Heteroparental Family','Strong princess who has saved her magical kingdom', '“Becoming a leader will be my greatest adventure.”');
+insert into CharDi values (1,2)
+insert into Character values( 3, 'Percy Jackson', 'Percy jackson and the olympians','Student','White','Step Family','Percy is a brave and adventurous demigod', 'I’m not choosing one of your paths I’m making my own');
+insert into CharDi values (2,3)
+insert into CharDi values (3,3)
+insert into Character values( 4, 'Lilo pelekai', 'Lilo and stitch','Ambassador to Earth','Native Hawaiian or Other Pacific Islander.','Extended Family','Lilo is kind and empathic with her friends', 'Ohana" means "family". "Family" means nobody gets left behind.');
+insert into CharDi values (1,4)
+insert into Character values( 5, 'Bow', 'She-ra and the princesses of power','Leader of the Rebellion','Black ','Homoparental Family','Bow is an archer and a hero, kind and friendly ', 'You say you're just ordinary people? I say you're warriors of The Rebellion!');
+insert into CharDi values (1,5)
+insert into Character values( 6, 'Moana', 'Moana','Chief of Motunui','Native Hawaiian or Other Pacific Islander.','Heteroparental Family','Moana is tenacious, optimistic and brave.', 'There’s just no telling how far I’ll go.');
+insert into CharDi values (1,6)
+insert into Character values( 7, 'Julia', 'Sesame street','Student','White','Heteroparental Family','People usually say she does things in her own way', '');
+insert into CharDi values (7,7)
+insert into Character values( 8, 'Toph Beifong', 'Avatar the last airbender','None','Asian','Heteroparental Family','Toph is a very strong and brave warrior', 'I don’t care what I look like. I’m not looking for anyone approval. I know who I am.');
+insert into CharDi values (4,8)
+insert into Character values( 9, ' Molly Mabray', 'Molly of Denali','Student','American Indian or Alaska Native.','Heteroparental Family','Molly is an Alaskan native vlogger', 'Thank you');
+insert into CharDi values (1,9)
+insert into Character values( 10, 'Amaya', 'The Dragon Prince','Leader of the Standing Battalion','Asian','Extendend Family','Amaya is the leader of the most powerful army', 'I trust you');
+insert into CharDi values (8,10)
+insert into Character values( 11, 'Bubbles', 'The Powerpuff Girls','Student','White','Single Parent Family','Bubbles is the cutest of the Powerpuff Girls', 'I´m sensitive, you know');
+insert into CharDi values (1,11)
+insert into Character values( 12, 'Aang', 'Avatar the last airbender','None','Asian','Extendend Family', 'Aang fought to stop a war','The Past Can Be A Great Teacher.');
+insert into CharDi values (1,12)
+insert into Character values( 13, 'Mulan', 'Mulan','Warrior','Asian','Heteroparental Family','Mulan is a brave, protective and heroic warrior', 'The flower that blooms in adversity is the most rare and beautiful of all.');
+insert into CharDi values (1,13)
+insert into Character values( 14, 'Edna Moda', 'The incredibles','Fashion desginer','Asian','Heteroparental Family ','Edna is really creative, she makes customs', 'Go! Confront the problem! Fight! Win!');
+insert into CharDi values (1,14)
+insert into Character values( 15, 'Ronnie Anne Santiago', 'The loud house','Student','Hispanic or Latino','Extendend Family','Ronnie is a very funny and tough girl', 'Smell ya later, lame-o!');
+insert into CharDi values (1,15)
+insert into Character values( 16, 'Carlitos', 'Rugrats','None','White','Single Parent Family','Carlitos is a very kind and shy boy.', 'It is good to be friends.');
+insert into CharDi values (1,16)
+insert into Character values( 17, 'T´challa', 'Black Phanther','King','Black','Extendend Family','T´challa is wise and just king', 'Wakanda forever.');
+insert into CharDi values (1,17)
+insert into Character values( 18, 'Hiro Hamada', 'Big Hero 6','Student','Asian','Extendend Family','Hiro is a very intelligent and charismatic person', 'Trust me, it will be amazing.');
+insert into CharDi values (1,18)
+insert into Character values( 19, 'Charles Xavier', 'X-men','Phd. in Genetics and other science fields','White','Extendend Family','Charles the leader and creator of the X-Men', 'Any dream worth having is a dream worth fighting for.');
+insert into CharDi values (6,19)
+insert into Character values( 20, 'Matt Murdock', 'Daredevil','Lawyer','White','Single Parent Family','Matt is a lawyer by day and a hero by night', 'I can´t change the past but I can stop making the same mistake.');
+insert into CharDi values (4,20)
+
+
+
+
+
+

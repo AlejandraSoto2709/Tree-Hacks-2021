@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThotModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Avatar">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="passw" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
+    <Property Name="raEth" Type="varchar" MaxLength="50" />
+    <Property Name="faTy" Type="varchar" MaxLength="50" />
+    <Property Name="idTy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AvDis">
+    <Key>
+      <PropertyRef Name="idAvDi" />
+    </Key>
+    <Property Name="idAvDi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDi" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Character">
+    <Key>
+      <PropertyRef Name="idC" />
+    </Key>
+    <Property Name="idC" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="show" Type="varchar" MaxLength="80" />
+    <Property Name="prof" Type="varchar" MaxLength="50" />
+    <Property Name="raEth" Type="varchar" MaxLength="50" />
+    <Property Name="faTy" Type="varchar" MaxLength="50" />
+    <Property Name="descrip" Type="varchar" MaxLength="50" />
+    <Property Name="frase" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CharDis">
+    <Key>
+      <PropertyRef Name="idCharDi" />
+    </Key>
+    <Property Name="idCharDi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idDi" Type="int" />
+    <Property Name="idC" Type="int" />
+  </EntityType>
+  <EntityType Name="DisabilityTypes">
+    <Key>
+      <PropertyRef Name="idDi" />
+    </Key>
+    <Property Name="idDi" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FamilyTypes">
+    <Key>
+      <PropertyRef Name="idFa" />
+    </Key>
+    <Property Name="idFa" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IdentityTypes">
+    <Key>
+      <PropertyRef Name="idI" />
+    </Key>
+    <Property Name="idI" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RaceEthnic">
+    <Key>
+      <PropertyRef Name="idRE" />
+    </Key>
+    <Property Name="idRE" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__AvDis__idDi__38996AB5">
+    <End Role="DisabilityTypes" Type="Self.DisabilityTypes" Multiplicity="0..1" />
+    <End Role="AvDis" Type="Self.AvDis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DisabilityTypes">
+        <PropertyRef Name="idDi" />
+      </Principal>
+      <Dependent Role="AvDis">
+        <PropertyRef Name="idDi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AvDis__username__398D8EEE">
+    <End Role="Avatar" Type="Self.Avatar" Multiplicity="0..1" />
+    <End Role="AvDis" Type="Self.AvDis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avatar">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="AvDis">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CharDis__idC__3D5E1FD2">
+    <End Role="Character" Type="Self.Character" Multiplicity="0..1" />
+    <End Role="CharDis" Type="Self.CharDis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Character">
+        <PropertyRef Name="idC" />
+      </Principal>
+      <Dependent Role="CharDis">
+        <PropertyRef Name="idC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CharDis__idDi__3C69FB99">
+    <End Role="DisabilityTypes" Type="Self.DisabilityTypes" Multiplicity="0..1" />
+    <End Role="CharDis" Type="Self.CharDis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DisabilityTypes">
+        <PropertyRef Name="idDi" />
+      </Principal>
+      <Dependent Role="CharDis">
+        <PropertyRef Name="idDi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ThotModel3StoreContainer">
+    <EntitySet Name="Avatar" EntityType="Self.Avatar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvDis" EntityType="Self.AvDis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Character" EntityType="Self.Character" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CharDis" EntityType="Self.CharDis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisabilityTypes" EntityType="Self.DisabilityTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FamilyTypes" EntityType="Self.FamilyTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IdentityTypes" EntityType="Self.IdentityTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RaceEthnic" EntityType="Self.RaceEthnic" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AvDis__idDi__38996AB5" Association="Self.FK__AvDis__idDi__38996AB5">
+      <End Role="DisabilityTypes" EntitySet="DisabilityTypes" />
+      <End Role="AvDis" EntitySet="AvDis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AvDis__username__398D8EEE" Association="Self.FK__AvDis__username__398D8EEE">
+      <End Role="Avatar" EntitySet="Avatar" />
+      <End Role="AvDis" EntitySet="AvDis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CharDis__idC__3D5E1FD2" Association="Self.FK__CharDis__idC__3D5E1FD2">
+      <End Role="Character" EntitySet="Character" />
+      <End Role="CharDis" EntitySet="CharDis" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CharDis__idDi__3C69FB99" Association="Self.FK__CharDis__idDi__3C69FB99">
+      <End Role="DisabilityTypes" EntitySet="DisabilityTypes" />
+      <End Role="CharDis" EntitySet="CharDis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Avatar">
+    <Key>
+      <PropertyRef Name="idAv" />
+    </Key>
+    <Property Name="idAv" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="Int32" />
+    <Property Name="raEth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="faTy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idTy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DisabilityTypes" Relationship="Self.AvDi" FromRole="Avatar" ToRole="DisabilityTypes" />
+  </EntityType>
+  <EntityType Name="Character">
+    <Key>
+      <PropertyRef Name="idC" />
+    </Key>
+    <Property Name="idC" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="show" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="prof" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="raEth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="faTy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descrip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="frase" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DisabilityTypes" Relationship="Self.CharDi" FromRole="Character" ToRole="DisabilityTypes" />
+  </EntityType>
+  <EntityType Name="DisabilityTypes">
+    <Key>
+      <PropertyRef Name="idDi" />
+    </Key>
+    <Property Name="idDi" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Avatar" Relationship="Self.AvDi" FromRole="DisabilityTypes" ToRole="Avatar" />
+    <NavigationProperty Name="Character" Relationship="Self.CharDi" FromRole="DisabilityTypes" ToRole="Character" />
+  </EntityType>
+  <EntityType Name="FamilyTypes">
+    <Key>
+      <PropertyRef Name="idFa" />
+    </Key>
+    <Property Name="idFa" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IdentityTypes">
+    <Key>
+      <PropertyRef Name="idI" />
+    </Key>
+    <Property Name="idI" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RaceEthnic">
+    <Key>
+      <PropertyRef Name="idRE" />
+    </Key>
+    <Property Name="idRE" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="AvDi">
+    <End Role="Avatar" Type="Self.Avatar" Multiplicity="*" />
+    <End Role="DisabilityTypes" Type="Self.DisabilityTypes" Multiplicity="*" />
+  </Association>
+  <Association Name="CharDi">
+    <End Role="Character" Type="Self.Character" Multiplicity="*" />
+    <End Role="DisabilityTypes" Type="Self.DisabilityTypes" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ThotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Avatar" EntityType="Self.Avatar" />
+    <EntitySet Name="Character" EntityType="Self.Character" />
+    <EntitySet Name="DisabilityTypes" EntityType="Self.DisabilityTypes" />
+    <EntitySet Name="FamilyTypes" EntityType="Self.FamilyTypes" />
+    <EntitySet Name="IdentityTypes" EntityType="Self.IdentityTypes" />
+    <EntitySet Name="RaceEthnic" EntityType="Self.RaceEthnic" />
+    <AssociationSet Name="AvDi" Association="Self.AvDi">
+      <End Role="Avatar" EntitySet="Avatar" />
+      <End Role="DisabilityTypes" EntitySet="DisabilityTypes" />
+    </AssociationSet>
+    <AssociationSet Name="CharDi" Association="Self.CharDi">
+      <End Role="Character" EntitySet="Character" />
+      <End Role="DisabilityTypes" EntitySet="DisabilityTypes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

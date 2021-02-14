@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThotModel3StoreContainer" CdmEntityContainer="ThotEntities3">
+    <EntitySetMapping Name="Avatars">
+      <EntityTypeMapping TypeName="ThotModel3.Avatar">
+        <MappingFragment StoreEntitySet="Avatar">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="passw" ColumnName="passw" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="raEth" ColumnName="raEth" />
+          <ScalarProperty Name="faTy" ColumnName="faTy" />
+          <ScalarProperty Name="idTy" ColumnName="idTy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvDis">
+      <EntityTypeMapping TypeName="ThotModel3.AvDi">
+        <MappingFragment StoreEntitySet="AvDis">
+          <ScalarProperty Name="idAvDi" ColumnName="idAvDi" />
+          <ScalarProperty Name="idDi" ColumnName="idDi" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characters">
+      <EntityTypeMapping TypeName="ThotModel3.Character">
+        <MappingFragment StoreEntitySet="Character">
+          <ScalarProperty Name="idC" ColumnName="idC" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="show" ColumnName="show" />
+          <ScalarProperty Name="prof" ColumnName="prof" />
+          <ScalarProperty Name="raEth" ColumnName="raEth" />
+          <ScalarProperty Name="faTy" ColumnName="faTy" />
+          <ScalarProperty Name="descrip" ColumnName="descrip" />
+          <ScalarProperty Name="frase" ColumnName="frase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CharDis">
+      <EntityTypeMapping TypeName="ThotModel3.CharDi">
+        <MappingFragment StoreEntitySet="CharDis">
+          <ScalarProperty Name="idCharDi" ColumnName="idCharDi" />
+          <ScalarProperty Name="idDi" ColumnName="idDi" />
+          <ScalarProperty Name="idC" ColumnName="idC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DisabilityTypes">
+      <EntityTypeMapping TypeName="ThotModel3.DisabilityType">
+        <MappingFragment StoreEntitySet="DisabilityTypes">
+          <ScalarProperty Name="idDi" ColumnName="idDi" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilyTypes">
+      <EntityTypeMapping TypeName="ThotModel3.FamilyType">
+        <MappingFragment StoreEntitySet="FamilyTypes">
+          <ScalarProperty Name="idFa" ColumnName="idFa" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IdentityTypes">
+      <EntityTypeMapping TypeName="ThotModel3.IdentityType">
+        <MappingFragment StoreEntitySet="IdentityTypes">
+          <ScalarProperty Name="idI" ColumnName="idI" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RaceEthnics">
+      <EntityTypeMapping TypeName="ThotModel3.RaceEthnic">
+        <MappingFragment StoreEntitySet="RaceEthnic">
+          <ScalarProperty Name="idRE" ColumnName="idRE" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

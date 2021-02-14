@@ -1,0 +1,17 @@
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\Diversity.exe.config
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\Diversity.exe
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\Diversity.pdb
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\EntityFramework.dll
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\EntityFramework.xml
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.csprojAssemblyReference.cache
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.Form1.resources
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.Properties.Resources.resources
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.csproj.GenerateResource.cache
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.csproj.CoreCompileInputs.cache
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.csproj.CopyComplete
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.exe
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.pdb
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.CreateAvatar.resources
+C:\Users\super\Documents\Diana\ITAM\TreeHacks\Education\DiversityApp\Diversity\obj\Debug\Diversity.MainWindow.resources

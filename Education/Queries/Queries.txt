@@ -1,0 +1,95 @@
+
+create table RaceEthnic
+(idRE int  not null primary key, 
+ nombre varchar(50) 
+);
+ 
+
+create table FamilyTypes
+(idFa int  not null primary key, 
+ nombre varchar(50)
+);
+
+create table IdentityTypes
+(idI int  not null primary key, 
+ nombre varchar(50)
+);
+
+create table DisabilityTypes
+(idDi int  not null primary key, 
+ nombre varchar(50)
+);
+
+
+create table Avatar
+( 
+ name varchar(50),
+user varchar(50)  primary key,
+passw varchar(50),
+age int,
+raEth varchar(50),
+faTy varchar(50),
+idTy varchar(50)
+);
+
+
+create table AvDi1
+(idAvDi int  IDENTITY(1,1) primary key, 
+idDi int references DisabilityTypes,
+idAv int references Avatar,
+);
+
+create table Character
+(idC int  not null primary key, 
+name varchar(50),
+show varchar(80),
+prof varchar(50),
+raEth varchar(50),
+faTy varchar(50),
+descrip varchar(50),
+frase varchar(100)
+);
+
+create table CharDi
+(idDi int references DisabilityTypes,
+idC int references Avatar,
+primary key(idDi, idC)
+);
+
+
+create table AvDis
+(idAvDi int  IDENTITY(1,1) primary key, 
+idDi int references DisabilityTypes,
+username varchar(50) references Avatar
+);
+
+create table CharDis
+(idCharDi int  IDENTITY(1,1) primary key,
+idDi int references DisabilityTypes,
+idC int references Character,
+);
+
+------------------------insert----------------------------------------------------------
+
+insert into RaceEthnic values( 1, 'American Indian or Alaska Native');
+insert into RaceEthnic values( 2, 'Asian');
+insert into RaceEthnic values( 3, 'Black or African American');
+insert into RaceEthnic values( 4, 'Hispanic or Latino');
+insert into RaceEthnic values( 5, 'Native Hawaiian or Other Pacific Islander');
+insert into RaceEthnic values( 6, 'White');
+
+insert into FamilyTypes values( 1, 'Heteroparental Family');
+insert into FamilyTypes values( 2, 'Homoparental Family');
+insert into FamilyTypes values( 3, 'Single Parent Family');
+insert into FamilyTypes values( 4, 'Extended Family');
+insert into FamilyTypes values( 5, 'Step Family');
+insert into FamilyTypes values( 6, 'Grandparent Family');
+
+insert into IdentityTypes values( 1, '');
+
+insert into DisabilityTypes values( 1, 'None');
+insert into DisabilityTypes values( 2, 'Blind');
+
+insert into Character values( 1, 'name', 'show','prof','raEth','faTy','descrip', 'frase');
+insert into CharDi values (2,1)
+insert into CharDi values (3,1)
